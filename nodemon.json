@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/nodemon.json",
+  "execMap": {
+    "ts": "ts-node"
+  },
+  "ext": "*.ts",
+  "ignoreRoot": ["dist", "node_modules"],
+  "watch": ["src\\**\\*.ts"]
+}

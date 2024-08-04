@@ -1,0 +1,62 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.ts": "always"
+  },
+  "editor.defaultFoldingRangeProvider": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.debug": true,
+  "eslint.enable": true,
+  "eslint.format.enable": false,
+  "eslint.probe": ["javascript", "typescript"],
+  "eslint.run": "onType",
+  "eslint.validate": ["javascript", "typescript"],
+  "explorer.confirmDragAndDrop": false,
+  "files.exclude": {
+    "**/node_modules/**": true,
+    ".git": true
+  },
+  "files.watcherExclude": {
+    "**/dist/**": true,
+    "**/node_modules/**": true,
+    ".git": true
+  },
+  "javascript.format.enable": false,
+  "javascript.suggestionActions.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": false,
+  "prettier.configPath": ".prettierrc.js",
+  "search.exclude": {
+    "**/dist/**": true,
+    ".git": true,
+    "node_modules": true,
+    "npm-debug.log.*": true,
+    "package-lock.json": true
+  },
+  "template-string-converter.autoRemoveTemplateString": true,
+  "template-string-converter.convertOutermostQuotes": true,
+  "template-string-converter.validLanguages": ["javascript", "typescript"],
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH};.\\node_modules\\.bin"
+  },
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "env": {
+        "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin",
+        "YTDL_EXE": "${workspaceFolder}\\bin\\youtube-dl.exe"
+      },
+      "source": "Git Bash"
+    }
+  },
+  "typescript.format.enable": false,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "material-icon-theme"
+}

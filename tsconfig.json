@@ -1,0 +1,16 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": null,
+    "esModuleInterop": true,
+    "declaration": false,
+    "allowJs": true,
+    "baseUrl": ".",
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "scripts: start",
+      "type": "npm",
+      "script": "start",
+      "detail": "Start the web file server."
+    },
+    {
+      "label": "scripts: build",
+      "type": "npm",
+      "script": "build",
+      "detail": "Build with webpack.",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$ts-webpack"]
+    }
+  ]
+}
