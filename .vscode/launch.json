@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node-terminal",
-      "request": "launch",
-      "name": "nodemon: debug web file server",
-      "command": "npm start"
+      "name": "nodemon: debug",
+      "type": "node",
+      "request": "attach",
+      "preLaunchTask": "nodemon: debug"
     }
   ]
 }

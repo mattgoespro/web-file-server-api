@@ -1,8 +1,8 @@
 {
-  "include": ["src"],
+  "include": ["src", "tsconfig.test.json"],
   "compilerOptions": {
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es2022",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": null,
     "esModuleInterop": true,

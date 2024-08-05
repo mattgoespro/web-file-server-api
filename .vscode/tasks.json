@@ -2,21 +2,45 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "scripts: start",
+      "label": "nodemon: debug",
       "type": "npm",
       "script": "start",
-      "detail": "Start the web file server."
+      "detail": "Start",
+      "problemMatcher": [
+        {
+          "base": "$tsc",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^[nodemon] \\d\\.\\d\\.\\d$",
+            "endsPattern": "^Starting `ts-node ./.*$"
+          }
+        }
+      ],
+      "options": {
+        "env": {
+          "PORT": "3000",
+          "SERVE_DIR": "${workspaceFolder}/dist"
+        }
+      },
+      "dependsOn": ["scripts: build test files"]
     },
     {
       "label": "scripts: build",
       "type": "npm",
       "script": "build",
-      "detail": "Build with webpack.",
+      "detail": "Build",
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": ["$ts-webpack"]
+    },
+    {
+      "label": "scripts: build test files",
+      "type": "npm",
+      "script": "build:test",
+      "detail": "Build test files",
+      "problemMatcher": ["$tsc"]
     }
   ]
 }
