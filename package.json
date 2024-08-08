@@ -1,7 +1,7 @@
 {
   "name": "web-file-server-api",
   "version": "0.0.1",
-  "description": "An web-server API to serve file contents over HTTP.",
+  "description": "A web-server API to serve file contents over HTTP.",
   "author": "mattgoespro",
   "type": "commonjs",
   "main": "index.js",
