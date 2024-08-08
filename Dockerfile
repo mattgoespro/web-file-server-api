@@ -1,11 +1,18 @@
-FROM node:22
+FROM node:22 AS build
 
 WORKDIR /usr/src/app
 
-COPY ./dist/file-server/file-server.js .
+COPY package*.json ./
+RUN npm install
 
-COPY ./package*.json .
+COPY . .
+RUN npm run build
 
-RUN npm ci
+FROM node:22
 
-CMD ["node", "file-server.js"]
+WORKDIR /usr/src/app
+COPY --from=build /usr/src/app /usr/src/app
+
+EXPOSE 3000
+
+CMD ["node", "dist/index.js"]

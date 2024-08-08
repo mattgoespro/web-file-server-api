@@ -5,7 +5,7 @@
       "label": "nodemon: debug",
       "type": "npm",
       "script": "start",
-      "detail": "Start",
+      "detail": "Debug the server with nodemon.",
       "problemMatcher": [
         {
           "base": "$tsc",
@@ -18,17 +18,17 @@
       ],
       "options": {
         "env": {
-          "PORT": "3000",
-          "SERVE_DIR": "${workspaceFolder}/dist"
+          "API_SERVER_PORT": "3000",
+          "MEDIA_DIR": "${workspaceFolder}\\media"
         }
       },
-      "dependsOn": ["scripts: build test files"]
+      "dependsOn": ["build: mock media files"]
     },
     {
-      "label": "scripts: build",
+      "label": "build",
       "type": "npm",
       "script": "build",
-      "detail": "Build",
+      "detail": "Build the project.",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -36,11 +36,39 @@
       "problemMatcher": ["$ts-webpack"]
     },
     {
-      "label": "scripts: build test files",
+      "label": "build: mock media files",
       "type": "npm",
-      "script": "build:test",
-      "detail": "Build test files",
+      "script": "build:mock-media-files",
+      "detail": "Build mock media files for testing the API.",
       "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "docker: build",
+      "type": "npm",
+      "script": "docker:build",
+      "detail": "Build the API Docker image.",
+      "dependsOn": ["build: mock media files"]
+      // "problemMatcher": [
+      //   {
+      //     "background": {
+      //       "activeOnStart": true,
+      //       "beginsPattern": "^\\[\\+\\] Building .* FINISHED$",
+      //       "endsPattern": "^(Successfully built|Successfully tagged).*$"
+      //     }
+      //   }
+      // ]
+    },
+    {
+      "label": "docker: start",
+      "type": "npm",
+      "script": "docker:start",
+      "detail": "Start the API in a Docker container.",
+      "dependsOn": ["build: mock media files"],
+      "options": {
+        "env": {
+          "MEDIA_DIR": "${workspaceFolder}\\media"
+        }
+      }
     }
   ]
 }

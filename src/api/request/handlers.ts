@@ -24,6 +24,7 @@ export function getFileRequestHandler(serveDir: string) {
 }
 
 export function listFilesRequestHandler(serveDir: string) {
+  console.log("Matched URL: /files");
   return (_request: express.Request, response: express.Response) => {
     const files = supportedFileTypes.flatMap((fileType) =>
       listRelativeFilePaths(serveDir, fileType)
@@ -34,7 +35,6 @@ export function listFilesRequestHandler(serveDir: string) {
 }
 
 function listRelativeFilePaths(serveDir: string, fileType: FileType) {
-  console.log("[listFilePaths] serveDir:", serveDir);
   console.log("[listFilePaths] fileType:", fileType);
   const fileAbsoluteLocation = path.resolve(serveDir, fileType);
 
@@ -51,6 +51,7 @@ function listRelativeFilePaths(serveDir: string, fileType: FileType) {
 }
 
 export function listFilesOfTypeRequestHandler(serveDir: string) {
+  console.log("Matched URL: /files/:fileType");
   return (_request: express.Request, response: express.Response) => {
     const files = listRelativeFilePaths(serveDir, _request.params.fileType);
     console.log("[listFilesOfTypeRequestHandler] response files:", files);
@@ -59,6 +60,8 @@ export function listFilesOfTypeRequestHandler(serveDir: string) {
 }
 
 export function listSupportedFileTypesRequestHandler() {
+  console.log("Matched URL: /files/file-types");
+
   return (_request: express.Request, response: express.Response) => {
     response.status(200).send(supportedFileTypes);
   };

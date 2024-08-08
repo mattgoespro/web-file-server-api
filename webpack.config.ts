@@ -1,7 +1,7 @@
 import path from "path";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import { Configuration, DefinePlugin, EnvironmentPlugin } from "webpack";
+import { Configuration, EnvironmentPlugin } from "webpack";
 
 export default {
   target: "node",
@@ -9,7 +9,8 @@ export default {
   entry: path.resolve(__dirname, "src", "index.ts"),
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "index.js"
+    filename: "index.js",
+    libraryTarget: "commonjs2"
   },
   resolve: {
     extensions: [".ts", ".js"],
@@ -28,11 +29,11 @@ export default {
     ]
   },
   optimization: {
-    minimize: true
+    minimize: false
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
-    new EnvironmentPlugin(["PORT", "SERVE_DIR"]),
+    new EnvironmentPlugin(["API_SERVER_PORT", "MEDIA_DIR"]),
     new CleanWebpackPlugin({ verbose: true })
   ]
 } satisfies Configuration;

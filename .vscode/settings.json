@@ -39,20 +39,30 @@
     "npm-debug.log.*": true,
     "package-lock.json": true
   },
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "icon": "terminal-debian",
+    "color": "terminal.ansiMagenta",
+    "args": ["-l"],
+    "env": {
+      "MEDIA_DIR": "${workspaceFolder}\\media",
+      "API_SERVER_PORT": "3000"
+    }
+  },
   "template-string-converter.autoRemoveTemplateString": true,
   "template-string-converter.convertOutermostQuotes": true,
   "template-string-converter.validLanguages": ["javascript", "typescript"],
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.env.windows": {
-    "PATH": "${env:PATH};.\\node_modules\\.bin"
-  },
   "terminal.integrated.profiles.windows": {
-    "Git Bash": {
+    "bash-node": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "icon": "terminal-bash",
+      "color": "terminal.ansiGreen",
       "env": {
         "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin",
-        "YTDL_EXE": "${workspaceFolder}\\bin\\youtube-dl.exe"
-      },
-      "source": "Git Bash"
+        "API_SERVER_PORT": "3000",
+        "MEDIA_DIR": "${workspaceFolder}\\media"
+      }
     }
   },
   "typescript.format.enable": false,

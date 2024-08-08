@@ -17,6 +17,8 @@
     "github.copilot",
     "meganrogge.template-string-converter",
     "amodio.tsl-problem-matcher",
-    "postman.postman-for-vscode"
+    "postman.postman-for-vscode",
+    "ms-azuretools.vscode-docker",
+    "github.vscode-github-actions"
   ]
 }

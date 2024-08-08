@@ -1,0 +1,10 @@
+.vscode/
+media/
+dist/
+.eslintrc.js
+.gitattributes
+.gitignore
+.prettierrc.js
+docker-compose.yaml
+tsconfig.test.json
+nodemon.json

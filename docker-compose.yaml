@@ -1,0 +1,22 @@
+services:
+  api:
+    container_name: web-file-server-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MEDIA_DIR=${MEDIA_DIR}
+    volumes:
+      - ${MEDIA_DIR}:/usr/src/app/media
+    expose:
+      - "3000"
+
+  nginx:
+    image: nginx:alpine
+    container_name: web-file-server-nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - api

@@ -30,7 +30,7 @@ module.exports = {
       }
     }
   },
-  ignorePatterns: [".eslintrc.js", "tc-types.d.ts", "dist"],
+  ignorePatterns: [".eslintrc.js", "dist", "media"],
   rules: {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [

@@ -1,7 +1,7 @@
-const getFile = "/:fileType/:fileName";
 const listFiles = "/files";
-const listFilesOfType = "/:fileType";
-const listSupportedFileTypes = "/file-types";
+const listFilesOfType = "/files/:fileType";
+const listSupportedFileTypes = "/files/file-types";
+const getFile = "/files/:fileType/:fileName";
 
 export default {
   getFile,
