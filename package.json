@@ -10,6 +10,7 @@
     "run": "node ./dist/index.js",
     "build": "cross-env API_SERVER_PORT=3000 MEDIA_DIR=media webpack --config webpack.config.ts --mode production",
     "build:mock-media-files": "tsc -p ./test/tsconfig.json",
+    "docker:build": "docker build -t web-file-server-api .",
     "docker:start": "docker compose up --build -d"
   },
   "dependencies": {
